@@ -13,7 +13,7 @@ var FormView = {
 
     var msgObj = {};
     msgObj.username = App.username;
-    msgObj.roomname = 'jonathin';
+    msgObj.roomname = RoomsView.$select.val();
     msgObj.text = $('#send').find('input[name="message"]').val();
     Parse.create(msgObj, ()=>{});
     //console.log('click!');

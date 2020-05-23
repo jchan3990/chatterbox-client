@@ -1,12 +1,12 @@
+var friends = []
 var Friends = {
 
-  friends = {},
-
-  toggleStatus: function(user){
-    $("#username").click(function(e) {
-      this.friends[user.text()] = user.text();
+  toggleStatus: function(){
+    $(".chat .username").click(function(){
+      var user = $(this).text();
+      //friends.push(user);
+      friends.push(user);
       console.log(friends);
     });
   }
-
 };

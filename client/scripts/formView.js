@@ -16,7 +16,7 @@ var FormView = {
     msgObj.roomname = RoomsView.$select.val();
     msgObj.text = $('#send').find('input[name="message"]').val();
     Parse.create(msgObj, ()=>{});
-    //console.log('click!');
+    location.reload(); // re-renders page
   },
 
   setStatus: function(active) {

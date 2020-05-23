@@ -6,7 +6,6 @@ var App = {
 
   initialize: function() {
     App.username = window.location.search.substr(10);
-    App.friends = {};
     FormView.initialize();
     RoomsView.initialize();
     MessagesView.initialize();
@@ -16,10 +15,9 @@ var App = {
     App.startSpinner();
     App.fetch(App.stopSpinner);
 
-    // setInterval(function() {
-    //   App.fetch();
-    // }, 1500);
-
+    //  setInterval(function() {
+    //    location.reload();
+    //  }, 10000);
   },
 
   fetch: function(callback = ()=>{}) {

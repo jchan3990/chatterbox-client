@@ -1,7 +1,6 @@
 var MessagesView = {
 
   $chats: $('#chats'),
-  $button: $('#submit'),
 
   initialize: function() {
     this.$chats.off('click');

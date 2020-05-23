@@ -21,9 +21,17 @@ var App = {
     Parse.readAll((data) => {
       // examine the response from the server request:
       //console.log(data);
+      var allRooms = []
       for (var object of data['results']) {
         MessagesView.renderMessage(object);
       }
+
+      iteratee = function(value){return value.roomname}
+      var uniqueData = _.uniq(data.results, false, iteratee);
+      for (var room of uniqueData){
+        RoomsView.renderRoom(room.roomname);
+      }
+
       callback();
     });
   },

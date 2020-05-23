@@ -11,7 +11,7 @@ var MessagesView = {
       if (data.username && data.text && data.roomname){
         html += MessageView.render(data);
       }
-        $('#chats').append(html);
+        this.$chats.append(html);
     }
   }
 }

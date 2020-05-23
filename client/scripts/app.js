@@ -11,6 +11,7 @@ var App = {
     RoomsView.initialize();
     MessagesView.initialize();
 
+
     // Fetch initial batch of messages
     App.startSpinner();
     App.fetch(App.stopSpinner);
@@ -31,6 +32,7 @@ var App = {
       for (var room of uniqueData){
         RoomsView.renderRoom(room.roomname);
       }
+      Rooms.add();
 
       callback();
     });

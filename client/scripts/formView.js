@@ -3,6 +3,7 @@ var FormView = {
   $form: $('form'),
 
   initialize: function() {
+    FormView.$form.off('submit');
     FormView.$form.on('submit', FormView.handleSubmit);
   },
 
@@ -10,7 +11,12 @@ var FormView = {
     // Stop the browser from submitting the form
     event.preventDefault();
 
-    console.log('click!');
+    var msgObj = {};
+    msgObj.username = App.username;
+    msgObj.roomname = 'jonathin';
+    msgObj.text = $('#send').find('input[name="message"]').val();
+    Parse.create(msgObj, ()=>{});
+    //console.log('click!');
   },
 
   setStatus: function(active) {

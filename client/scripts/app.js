@@ -35,8 +35,28 @@ var App = {
         RoomsView.renderRoom(room.roomname);
       }
       Rooms.add();
+      //console.log(uniqueData);
 
+
+      // var filteredRooms = _.filter(data.results, (obj) =>{
+      //   if (obj.roomname !== 'undefined'){
+      //     return obj.roomname;
+      //   }
+      // });
+
+      //console.log("filteredRooms", filteredRooms);
       Friends.toggleStatus();
+
+      RoomsView.$select.change(function() {
+        let selectRoom = RoomsView.$select.val();
+        console.log(selectRoom);
+        for (var object of data['results']) {
+          if (object.roomname === selectRoom){
+            MessagesView.renderMessage(object);
+          }
+
+        }
+      })
 
       callback();
     });

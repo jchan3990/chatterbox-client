@@ -6,6 +6,12 @@ var RoomsView = {
   initialize: function() {
     this.$button.off('click');
     this.$button.on('click', Rooms.add);
+
+    // this.$select.change(function() {
+    //   let selectRoom = RoomsView.$select.val();
+
+
+    // })
   },
 
   render: _.template(
@@ -17,6 +23,7 @@ var RoomsView = {
     newObject['roomname'] = rooms;
     this.$select.append(this.render(newObject));
   }
+
 }
 
 
